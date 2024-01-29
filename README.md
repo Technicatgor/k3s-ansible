@@ -22,9 +22,9 @@ Build a Kubernetes cluster using Ansible with k3s. The goal is easily install a 
 
 on processor architecture:
 
-- [X] x64
-- [X] arm64
-- [X] armhf
+- [x] x64
+- [x] arm64
+- [x] armhf
 
 ## ✅ System requirements
 
@@ -89,7 +89,7 @@ After deployment control plane will be accessible via virtual ip-address which i
 ansible-playbook reset.yml -i inventory/my-cluster/hosts.ini
 ```
 
->You should also reboot these nodes due to the VIP not being destroyed
+> You should also reboot these nodes due to the VIP not being destroyed
 
 ## ⚙️ Kube Config
 
@@ -116,7 +116,7 @@ You can find more information about it [here](molecule/README.md).
 
 ### Pre-commit Hooks
 
-This repo uses `pre-commit` and `pre-commit-hooks` to lint and fix common style and syntax errors.  Be sure to install python packages and then run `pre-commit install`.  For more information, see [pre-commit](https://pre-commit.com/)
+This repo uses `pre-commit` and `pre-commit-hooks` to lint and fix common style and syntax errors. Be sure to install python packages and then run `pre-commit install`. For more information, see [pre-commit](https://pre-commit.com/)
 
 ## 🌌 Ansible Galaxy
 
