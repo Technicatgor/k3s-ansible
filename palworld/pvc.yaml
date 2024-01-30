@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    app: palworld-server
+  name: palworld-server-pv
+  namespace: palworld
+spec:
+  capacity:
+    storage: 12Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: palworld-storage
+  hostPath:
+    path: /pal
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: palworld-server
+  name: palworld-server-data
+  namespace: palworld
+spec:
+  storageClassName: palworld-storage
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 12Gi
