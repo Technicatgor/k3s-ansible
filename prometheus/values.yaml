@@ -43,13 +43,24 @@ grafana:
   defaultDashboardsEnabled: true
   defaultDashboardsTimezone: Asia/Hong_Kong
   service:
-    type: LoadBalancer
+    type: NodePort
   serviceMonitor:
     enabled: true
   admin:
     existingSecret: grafana-admin-credentials
     userKey: admin-user
     passwordKey: admin-password
+
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    annotations:
+      kubernetes.io/ingress.class: nginx
+
+    hosts:
+      - grafana.local.itcatgor.com
+
+    path: /
 
 kubeApiServer:
   enabled: true
