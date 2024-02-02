@@ -95,7 +95,7 @@ resources:
     cpu: 400m
     memory: 512Mi
   requests:
-    cpu: 100m
-    memory: 128Mi
+    cpu: 200m
+    memory: 256Mi
 
 extraEnvVars: { DNSMASQ_USER: "root" }
