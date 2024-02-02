@@ -3,10 +3,12 @@ kind: PersistentVolumeClaim
 metadata:
   name: uptime-data-claim
   namespace: uptime-kuma
+  labels:
+    app: uptime-kuma
 spec:
   storageClassName: longhorn
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
